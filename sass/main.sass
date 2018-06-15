@@ -1,0 +1,843 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "_mixins/other"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.60
+	font-family: $default-font
+	overflow-x: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+h2
+	margin: 0
+	text-align: center
+	font-weight: 600
+	font-size: 50px
+	color: #626262
+	opacity: .94
+	+b(mobile)
+		font-size: 30px
+
+p
+	margin-bottom: 25px
+
+input, textarea
+	display: block
+	width: 100%
+	height: 31px
+	border: 0
+	border-bottom: 1px solid $bordercolor
+	outline: 0
+	transition: all .5s ease
+	font-size: 15px
+	margin-bottom: 27px
+	+placeholder
+		color: #000
+		opacity: .6
+	&:focus
+		border-bottom: 1px solid $orange
+textarea
+	resize: none
+	height: 92px
+	margin-top: -3px
+	padding-left: 1px
+
+.btn
+	width: 100%
+	box-shadow: $btnshadow
+	border: 1px solid $orange
+	background-color: $orange
+	border-radius: 27px
+	outline: none
+	padding: 11px 10px 13px 42px
+	color: #fff
+	+transition(.5s)
+	&__arrow
+		width: 17px
+		height: 20px
+		position: relative
+		top: 6px
+		fill: #fff
+		+transition(.5s)
+		margin-left: 15px
+	&:hover 
+		background-color: transparent
+		color: $orange
+		.btn__arrow
+			fill: $orange
+
+.site-width
+	max-width: 1168px
+	padding: 0 15px
+	margin: auto
+	+clearfix
+
+.header
+	+clearfix
+	padding-top: 82px
+	margin-bottom: 124px
+	+b(mobile)
+		padding-top: 30px
+		margin-bottom: 40px
+	&__menu
+		width: 34px
+		height: 20px
+		position: relative
+		transform: rotate(0deg)
+		transition: .5s ease-in-out
+		cursor: pointer
+		float: right
+		position: relative
+		top: -1px
+		+b(mobile)
+			top: 15px
+		span 
+			display: block
+			position: absolute
+			height: 4px
+			width: 50%
+			background-color: #170f1c
+			opacity: .6
+			transform: rotate(0deg)
+			transition: .25s ease-in-out
+			&:nth-child(even)
+				left: 50%
+				border-radius: 0 2px 2px 0
+			&:nth-child(odd)
+				left: 0
+				border-radius: 2px 0 0 2px
+			&:nth-child(1), &:nth-child(2)
+				top: 0px
+			&:nth-child(3), &:nth-child(4)
+				top: 8px
+			&:nth-child(5), &:nth-child(6)
+				top: 16px
+		&.open span:nth-child(1), &.open span:nth-child(6) 
+			transform: rotate(45deg)
+		&.open span:nth-child(2), &.open span:nth-child(5)
+			transform: rotate(-45deg)
+		&.open span:nth-child(1)
+			left: 4px
+			top: 5px
+		&.open span:nth-child(2)
+			left: calc(50% - 4px)
+			top: 5px
+		&.open span:nth-child(3)
+			left: -50%
+			opacity: 0
+		&.open span:nth-child(4)
+			left: 100%
+			opacity: 0
+
+		&.open span:nth-child(5)
+			left: 4px
+			top: 14px
+		&.open span:nth-child(6)
+			left: calc(50% - 4px)
+			top: 14px
+.title
+	&__clr
+		color: #fc6744
+.first-screen
+	background-color: #f5f5f5
+	margin-bottom: 121px
+	+b(mobile)
+		margin-bottom: 40px
+	&__title
+		margin-bottom: 12px
+		+b(mobile)
+			font-size: 30px
+	&__description
+		text-align: center
+		max-width: 710px
+		display: block
+		margin: 0 auto 106px
+		+b(mobile)
+			margin-bottom: 40px
+	&__form
+		width: 372px
+		background: #fff
+		border-radius: 2px
+		box-shadow: $boxshadow
+		padding: 19px 39px 20px 39px
+		+b(mobile)
+			display: block
+			margin: auto
+		+b(mobile-sm)
+			width: 100%
+		&-title
+			display: block
+			text-align: center
+			font-size: 20px
+			color: #211a18
+			opacity: 0.9
+			display: block
+			margin-bottom: 38px
+	&__color
+		color: $orange
+	&__btn
+		margin: -6px auto 0
+		max-width: 238px
+		display: block
+
+.working-process
+	margin-bottom: 286px
+	+b(mobile)
+		margin-bottom: 30px
+	&__title
+		opacity: 1
+		color: #000
+		margin-bottom: -5px
+		+b(mobile)
+			margin-bottom: 0
+	&__descr
+		display: block
+		text-align: center
+		opacity: 0.7
+		color: #414141
+		letter-spacing: 0.16px
+		margin-bottom: 105px
+		+b(mobile)
+			margin-bottom: 20px
+	&__list
+		letter-spacing: -.36em
+		+ul
+		margin: 0 -15px
+
+	&__item
+		letter-spacing: normal
+		display: inline-block
+		padding: 0 15px
+		width: 25%
+		vertical-align: top
+		+b(tablet)
+			width: 50%
+			margin-bottom: 50px
+		+b(mobile-sm)
+			width: 100%
+	&__shadow
+		box-shadow: 0 0 35px rgba(20, 20, 21, 0.21)
+		text-align: center
+		color: #fff
+		padding: 52px 27px 0
+	&__blue 
+		background-color: #4eb2f7
+	&__pink
+		background-color: #c049f8 
+	&__purple
+		background-color: #817eff
+	&__red
+		background-color: #f74770
+	&__icon
+		font-size: 50px
+		opacity: .8
+		&-align
+			height: 69px
+		&--rotate
+			transform: rotate(-17deg)
+	&__ttl
+		display: block
+		font-weight: 600
+		font-size: 20px
+		line-height: 1.1
+		margin-bottom: 14px
+		opacity: .9
+
+	&__desctiption
+		display: block
+		font-size: 15px
+		line-heigth: 22px
+		opacity: .75
+		margin-bottom: 3px
+		min-height: 48px
+	&__button 
+		display: block
+		margin: auto
+		background-color: #fff
+		border-radius: 27px
+		padding: 16px 5px 16px 21px
+		color: rgba(0,0,0,.7)
+		+transition(.5s)
+		position: relative
+		top: 24px
+		width: calc(100% + 20px)
+		left: -8px
+		+b(mobile)
+			box-shadow: 1px 6px 14px rgba(20, 20, 21, 0.09)
+		&:after, &:before
+			content: ''
+			dispaly: block
+			position: absolute
+			width: 1px
+			height: 15px
+			top: 50%
+			margin-top: -7px
+			background: rgba(0,0,0,.5)
+			left: 55px
+		&:before
+			width: 15px
+			height: 1px
+			margin-top: 0
+			left: 48px			
+		&:hover
+			text-decoration: none
+			box-shadow: 1px 6px 14px rgba(20, 20, 21, 0.09)
+
+.featured-works
+	margin-bottom: 280px
+	+b(mobile)
+		margin-bottom: 30px
+	&__wrap
+		margin: -8px -15px 0
+		letter-spacing: -.36em
+	&__col
+		letter-spacing: normal
+		display: inline-block
+		width: 33.33%
+		+b(tablet)
+			width: 50%
+		+b(mobile)
+			width: 100%
+	&__item
+		padding: 13px 15px
+		height: 384px
+		+b(mobile)
+			height: auto
+	&__image
+		object-fit: cover
+		height: 100%
+		width: 100%
+
+.provide-serc
+	padding-bottom: 150px
+	width: 100%
+	overfow: hidden
+	+b(mobile)
+		padding-bottom: 60px
+	&__tabs
+		+clearfix
+	&__caption
+		float: left
+		width: 104px
+		+ul
+		+b(tablet)
+			float: none
+			width: 100%
+			text-align: center
+			margin-bottom: 20px
+		li
+			width: 104px
+			height: 92px
+			+transition(.5s)
+			cursor: pointer
+			+b(tablet)
+				display: inline-block
+				vertical-align: top
+			+b(mobile)
+				width: 60px
+				height: 80px
+			&.active
+				box-shadow: 0 0 36px rgba(20, 20, 21, 0.2)
+				border-radius: 2px
+			&:not(:last-child) 
+				margin-bottom: 7px
+	&__content
+		display: none
+		&.active
+			display: block
+	&__descr
+		margin-bottom: 132px
+		+b(mobile)
+			margin-bottom: 20px
+	&__tab1
+		margin-top: 25px
+		margin-left: 25px
+		+b(mobile)
+			margin-top: 15px
+			margin-left: 5px
+	&__tab2
+		margin-top: 18px
+		margin-left: 17px
+		+b(mobile)
+			margin-top: 10px
+			margin-left: 5px
+	&__tab3
+		margin-top: 23px
+		margin-left: 13px
+		+b(mobile)
+			margin-top: 18px
+			margin-left: 5px
+			width: 70px
+	&__tab4
+		margin-top: 25px
+		margin-left: 26px
+		+b(mobile)
+			margin-top: 15px
+			margin-left: 5px
+	&__content
+		padding-left: 124px
+		float: left
+		width: calc(100% - 104px)
+		margin-top: -11px
+		position: relative
+		padding-right: 400px
+		min-height: 389px
+		+b(tablet)
+			padding-left: 0
+			width: 100%
+		+b(mobile)
+			padding-right: 0
+			min-height: 1px
+	&__ttl
+		display: block
+		font-size: 30px
+		&:after
+			content: ''
+			display: block
+			width: 57px
+			height: 3px
+			background-color: $orange
+			margin-top: 4px
+			margin-bottom: -3px
+	&__image
+		position: absolute
+		right: -42px
+		bottom: -55px
+		max-width: 100%
+		+b(tablet)
+			right: 0
+			bottom: auto
+			top: 50%
+			transform: translateY(-50%)
+		+b(mobile)
+			position: relative
+			transform: translateY(0)
+			margin: 40px auto 0
+			display: block
+	&__readmore
+		max-width: 238px
+		float: left
+		text-align: center
+		border: 1px solid rgba(1, 2, 2, 0.07)
+		box-shadow: 2px 11px 20px rgba(20, 20, 21, 0.07)
+		+transition(.5s)
+		margin-top: -20px
+		+b(mobile)
+			float: none
+		&:hover
+			text-decoration: none
+			opacity: 0.7
+			color: #000000
+
+.team
+	background-color: #fbfbfb
+	padding-top: 151px
+	padding-bottom: 170px
+	margin-bottom: 123px
+	+b(mobile)
+		padding-top: 30px
+		padding-bottom: 50px
+		margin-bottom: 20px
+	&__descr
+		margin-bottom: 124px
+		+b(mobile)
+			margin-bottom: 20px
+	&__wrap
+		margin: 0 -15px
+		letter-spacing: -.36em
+		+b(tablet)
+			text-align: center
+	&__col
+		padding: 0 15px
+		letter-spacing: normal
+		vertical-align: top
+		width: 33.33%
+		display: inline-block
+		+b(tablet)
+			width: 50%
+			margin-bottom: 20px
+		+b(mob)
+			width: 100%
+	&__info
+		background-color: $orange
+		height: 445px
+		box-shadow: 0 0 2px rgba(20, 20, 21, 0.6)
+		position: relative
+		cursor: pointer
+		+transition(.5s)
+		+b(tablet)
+			background-color: #fff3f0
+			box-shadow: 0 0 49px rgba(20, 20, 21, 0.11)
+		+b(mobile-sm)
+			height: 345px
+		&:hover
+			background-color: #fff3f0
+			box-shadow: 0 0 49px rgba(20, 20, 21, 0.11)
+			.team__bottom
+				bottom: 0
+				background-color: #fff3f0
+				box-shadow: 0 0 0
+				height: 124px
+			.team__prof
+				color: $orange
+			.team__list, .team__itemalign
+				opacity: 1
+				visibility: visible
+	&__bottom
+		position: absolute
+		box-shadow: 1px 6px 16px rgba(20, 20, 21, 0.08)
+		background-color: #fff
+		border-radius: 2px
+		height: 95px
+		width: 73%
+		bottom: -23px
+		left: 50%
+		transform: translateX(-50%)
+		text-align: center
+		padding-top: 10px
+		+transition(.5s)
+		+b(tablet)
+			bottom: 0
+			background-color: #fff3f0
+			box-shadow: 0 0 0
+			height: 124px
+	&__name
+		display: block
+		font-size: 30px
+		font-weight: 600
+		color: rgba(0,0,0,.7)
+	&__prof
+		color: rgba(0,0,0,.7)
+		display: block
+		+transition(.5s)
+	&__list
+		+ul
+		margin-top: 5px
+		opacity: 0
+		visibility: hidden
+		+transition(.5s)
+		+b(tablet)
+			opacity: 1
+			visibility: visible
+	&__item
+		display: inline-block
+		padding: 0 6px
+	&__icon
+		opacity: 0.3
+		color: #010202
+		+transition(.5s)
+		&:hover
+			opacity: 1
+	&__itemalign
+		display: table
+		width: 100%
+		height: 100%
+		text-align: center
+		opacity: 0
+		visibility: hidden
+		+transition(.5s)
+		+b(tablet)
+			opacity: 1
+			visibility: visible
+	&__middle
+		display: table-cell
+		vertical-align: middle
+		padding-top: 10px
+
+.skills
+	+ul
+	max-width: 150px
+	margin: 0 auto
+	&__line
+		position: relative
+		height: 4px 
+		background-color: #707070
+		border-radius: 2px
+		&:not(:last-child)
+			margin-bottom: 28px
+		em
+			font-size: 11px
+			font-style: normal
+			position: absolute
+			top: -21px
+			left: 0
+			width: 100%
+			text-align: center
+	&__status
+		position: absolute
+		top: 0
+		left: 0
+		width: 0
+		height: 100%
+		background-color: #ff6e47
+		border-radius: 2px
+
+.slider
+	&__item
+		padding: 50px 18px 15px
+		position: relative
+		border-radius: 1px
+		+b(mobile-sm)
+			padding-left: 1px
+			padding-right: 1px
+	&__pdng
+		padding: 89px 45px 32px 46px
+	&__photo
+		position: absolute
+		background-color: #fff
+		width: 100px
+		height: 100px
+		border: 1px solid #cfcfcf
+		border-radius: 50%
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+	&__descr
+		margin-bottom: 78px
+		+b(mobile)
+			margin-bottom: 20px
+	&__quotes
+		color: rgba(0,0,0,.7)
+		font-size: 17px
+		display: block
+		margin-bottom: 16px
+		text-align: center
+		+b(mobile-sm)
+			font-size: 15px
+		&--name 
+			font-size: 17px
+			opacity: 0.8
+			color: #000000
+			font-weight: 600
+		&--prof
+			font-style: italic
+		&:after
+			content: '“'
+		&:before
+			content: '”'
+	&__arrow
+		width: 48px
+		height: 48px
+		background-color: #fff
+		box-shadow: 1px 3px 14px rgba(20, 20, 21, 0.08)
+		position: absolute
+		border-radius: 50%
+		top: 49%
+		z-index: 1
+		cursor: pointer
+		text-align: center
+		line-height: 48px
+		+transition(.5s)
+		&:hover 
+			background-color: $orange
+			.slider__arrow--icon
+				color: #fff
+		&--next
+			right: -26px
+			padding-left: 5px
+		&--prev
+			left: -26px
+		&--icon
+			line-height: 49px
+			color: rgba(0,0,0,.9)
+			+transition(.5s)
+
+.sld
+	position: relative
+	+b(desktop-lg)
+		width: 95%
+		margin: auto
+.slider__pdng
+	+transition(.5s)
+	box-shadow: 0 0 27px rgba(20, 20, 21, 0.09)
+	border: 1px solid transparent
+.slider__pdng:hover
+	box-shadow: 0 0 0
+	border: 1px solid #cfcfcf
+
+.slick-current
+	.slider__pdng
+		+b(mobile-sm)
+			box-shadow: 0 0 0
+			border: 1px solid lightgrey
+
+.slick-initialized .slick-slide,
+.slick-initialized .slick-slide a 
+	outline: none
+
+.rating
+	width: 63px
+	height: 12px
+	display: block
+	margin: 0 auto 14px
+	background-image: url('../img/rating.png')
+	baxground-position: 0
+	&.r0
+		background-position: 0 bottom
+	&.r1
+		background-position: 0 24px
+	&.r2
+		background-position: 0 36px
+	&.r3
+		background-position: 0 48px
+	&.r4
+		background-position: 0 60px
+	&.r5
+		background-position: 0 top
+.textcenter
+	text-align: center
+
+.slick-dots
+	margin-bottom: -50px
+	+b(mobile)
+		margin-bottom: 0
+	li
+		width: 18px
+		height: 6px
+		margin: 0 4px
+		button
+			width: 100%
+			height: 100%
+			padding: 0
+			margin: 0
+			border-radius: 3px
+			background-color: #e0e0e0
+			&:before
+				display: none
+		&.slick-active
+			button
+				background-color: $orange
+
+.clients-said
+	margin-bottom: 129px
+	width: 100%
+	overflow: hidden
+	+b(mobile)
+		margin-bottom: 20px
+
+.partners
+	background-color: #fbfbfb
+	padding-top: 106px
+	padding-bottom: 93px
+	width: 100%
+	overflow: hidden
+	+b(mobile)
+		padding: 50px 0
+	&__list
+		letter-spacing: -.36em
+	&__item
+		letter-spacing: normal
+		display: inline-block
+		width: 16.66%
+		vertical-align: middle
+	&__img
+		display: block
+		max-width: 96%
+		margin: auto
+		opacity: 0.2
+		+transition(.5s)
+		&:hover
+			opacity: 1
+	.slick-dots
+		+b(mobile)
+			margin-bottom: -15px
+.footer
+	background-color: #f7f7f7
+	padding-top: 45px
+	text-align: center
+	padding-bottom: 55px
+	&__bth
+		color: #000
+		box-shadow: 2px 11px 20px rgba(20, 20, 21, 0.07)
+		border-radius: 27px
+		border: 1px solid rgba(1, 2, 2, 0.07)
+		background-color: #fdfdfd
+		display: block
+		margin: 0 auto 46px
+		max-width: 238px
+		text-align: center
+		padding: 15px 10px
+		+transition(.5s)
+		&:hover
+			text-decoration: none
+			color: #000
+			background-color: $orange
+			color: #fff
+	&__social
+		+ul
+		display: inline-block
+		margin-left: -19px
+		+b(mobile)
+			display: block
+			margin-left: 0
+			margin-bottom: 10px
+	&__link
+		display: block
+		height: 100%
+		line-height: 52px
+	&__item
+		display: inline-block
+		width: 52px
+		height: 52px
+		border-radius: 50%
+		background-color: #d3d3d3
+		margin: 0 5px
+		+transition(.5s)
+		&:hover
+			background-color: $orange
+			box-shadow: 0 0 23px rgba(20, 20, 21, 0.29)
+	&__copy
+		opacity: 0.6
+		color: #040404
+		font-size: 17px
+		position: relative
+		top: 3px
+		left: 18px
+		+b(mobile)
+			left: 0
+	&__icon
+		font-size: 21px
+		color: #fff

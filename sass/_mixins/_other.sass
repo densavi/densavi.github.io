@@ -1,0 +1,39 @@
+=clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
+ 
+
+=b($point)
+	@if $point == desktop-lg
+		@media (max-width: 1250px) { @content ; }
+	@else if $point == desktop
+		@media (max-width: 1170px) { @content ; }
+	@else if $point == tablet
+		@media (max-width: 1023px) { @content ; }	
+	@else if $point == mobile
+		@media (max-width: 767px) { @content ; }
+	@else if $point == mob
+		@media (max-width: 630px) { @content ; }
+	@else if $point == mobile-sm
+		@media (max-width: 480px)  { @content ; }
+
+
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+=transition($sec)
+	transition: all $sec ease
+
+=ul
+	list-style: none
+	margin: 0
+	padding: 0
