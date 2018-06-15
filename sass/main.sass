@@ -185,6 +185,9 @@ textarea
 .first-screen
 	background-color: #f5f5f5
 	margin-bottom: 121px
+	position: relative
+	.site-width
+		position: relative
 	+b(mobile)
 		margin-bottom: 40px
 	&__title
@@ -204,6 +207,8 @@ textarea
 		border-radius: 2px
 		box-shadow: $boxshadow
 		padding: 19px 39px 20px 39px
+		z-index: 1
+		position: relative
 		+b(mobile)
 			display: block
 			margin: auto
@@ -223,6 +228,16 @@ textarea
 		margin: -6px auto 0
 		max-width: 238px
 		display: block
+	&__img
+		position: absolute
+		bottom: 0
+		right: 0
+		width: calc(100% - 388px)
+		+b(desktop)
+			width: 100%
+			left: 0
+		+b(mobile)
+			display: none
 
 .working-process
 	margin-bottom: 286px
@@ -355,7 +370,7 @@ textarea
 .provide-serc
 	padding-bottom: 150px
 	width: 100%
-	overfow: hidden
+	overflow: hidden
 	+b(mobile)
 		padding-bottom: 60px
 	&__tabs
