@@ -38,8 +38,6 @@ $(function() {
 	} slider();
 
 	function mobileSlider() {
-
-
 		$('.partners__list').slick({
 			slidesToShow: 6,
 			dots: false,
@@ -60,9 +58,24 @@ $(function() {
 			}
 			]
 		});
-		
-
 	} mobileSlider();
+
+
+	function openMenu() {
+		$('.header__menu').click(function() {
+			$('.menu').slideToggle();
+			$('body').toggleClass('scroll');
+		});
+
+		$(".menu__list").on("click","a", function (event) {
+			event.preventDefault();
+			$('.menu').slideUp();
+			$('.header__menu').removeClass('open');
+			var id  = $(this).attr('href'),
+				top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top}, 1500);
+		});
+	} openMenu();
 
 
 });
