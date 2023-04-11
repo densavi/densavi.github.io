@@ -1,0 +1,14 @@
+.post {
+  border: 1px solid #EBEBEB;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  &__info {
+    flex: 1;
+  }
+  &__image {
+    display: flex;
+    height: 200px;
+    margin-bottom: 16px;
+  }
+}

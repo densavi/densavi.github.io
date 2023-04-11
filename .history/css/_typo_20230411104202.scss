@@ -1,0 +1,49 @@
+body {
+  font: 16px/24px $mainFont;
+  color: $grey;
+  padding-bottom: 100px;
+  @media (max-width: $mobile) {
+    padding-bottom: 50px;
+  }
+}
+
+a {
+  color: $mainFont;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+.wrapper {
+  padding-top: 54px;
+  @media (max-width: $mobile) {
+    padding-top: 30px;
+  }
+}
+
+.btn {
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid #EBEBEB;
+  border-radius: 8px;
+  padding: .385rem .903rem;
+  transition: all .3s ease;
+  outline: none;
+  &:hover {
+    background: $orange;
+    color: #fff;
+    border-color: $orange;
+  }
+}
+
+.btn.btn-primary {
+  background: $orange;
+  border-color: $orange;
+  color: #fff;
+  &:hover {
+    background: transparent;
+    color: $orange;
+  }
+}

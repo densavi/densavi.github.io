@@ -1,0 +1,52 @@
+.header {
+  border-bottom: 1px solid #EBEBEB;
+  padding: 16px 0;
+  &__search {
+    background: $lightGrey;
+    padding: 0 0 0 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    margin: 0;
+    img {
+      display: flex;
+    }
+    input[type="search"] {
+      height: 40px;
+      border: 0;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      padding: 0 12px;
+    }
+  }
+  &__sign-in {
+    text-decoration: none;
+    color: $grey;
+    transition: color .3s ease;
+    margin-left: 27px;
+    &:hover {
+      color: $orange;
+    }
+  }
+  &__lang-link {
+    color: $grey;
+    text-decoration: none;
+    transition: color .3s ease;
+    svg {
+      margin-left: 2px;
+      transform: translateY(-2px);
+      path {
+        transition: transform .3s ease;
+      }
+    }
+    &:hover {
+      color: $orange;
+      svg {
+        path {
+          stroke: $orange;
+        }
+      }
+    }
+  }
+}

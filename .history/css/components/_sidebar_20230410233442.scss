@@ -1,0 +1,12 @@
+.sidebar {
+  &__item {
+    margin-left: -15px;
+    width: calc(100% + 15px);
+  }
+  &__link {
+    height: 40px;
+    &.active {
+      background: $orange;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+body {
+  font: 16px/24px $mainFont;
+  color: $lightGrey;
+}
+
+a {
+  color: $mainFont;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}

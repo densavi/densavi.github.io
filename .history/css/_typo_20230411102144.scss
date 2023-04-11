@@ -1,0 +1,23 @@
+body {
+  font: 16px/24px $mainFont;
+  color: $grey;
+  padding-bottom: 100px;
+}
+
+a {
+  color: $mainFont;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+.wrapper {
+  padding-top: 54px;
+}
+
+.btn {
+  font-weight: 700;
+  text-decoration: none;
+}

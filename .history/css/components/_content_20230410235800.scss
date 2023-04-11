@@ -1,0 +1,25 @@
+.content {
+  &__head {
+    margin-bottom: 4px;
+  }
+  &__title {
+    margin: 0;
+    color: $darkBlack;
+    font-size: 40px;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+  &__link {
+    display: flex;
+    height: 40px;
+    width: max-content;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #EBEBEB;
+    &.active {
+      background: $darkBlack;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
